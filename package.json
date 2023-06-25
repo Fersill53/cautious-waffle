@@ -16,5 +16,9 @@
   "bugs": {
     "url": "https://github.com/Fersill53/cautious-waffle/issues"
   },
-  "homepage": "https://github.com/Fersill53/cautious-waffle#readme"
+  "homepage": "https://github.com/Fersill53/cautious-waffle#readme",
+  "dependencies": {
+    "fs-extra": "^11.1.1",
+    "inquirer": "^9.2.7"
+  }
 }
