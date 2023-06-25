@@ -24,3 +24,19 @@ const generateHTML = (data) => {
   return htmlContent;
 };
 
+const promptUser = async() => {
+    const questions = [
+        {
+            type: 'input',
+            name: 'title',
+            message: 'Enter project title',
+
+        },
+
+        {
+            type: 'input',
+            name: 'description',
+            message: 'Enter project description',
+        }
+    ]
+}
