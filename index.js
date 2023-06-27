@@ -37,6 +37,56 @@ const promptUser = async() => {
             type: 'input',
             name: 'description',
             message: 'Enter project description',
+        },
+
+        {
+            type: 'input',
+            name: 'installation',
+            message: 'Enter steps for installation',
+        },
+
+        {
+            type: 'input',
+            name: 'Usage',
+            message: 'Describe what project will be used for',
+        },
+
+        {
+            type:'input',
+            name: 'contribution',
+            message: 'Enter contribution info',
+        },
+
+        {
+            type: 'input',
+            name: 'github',
+            message: 'For questions (github)'
+        },
+
+        {
+            type: 'list',
+            name: 'license',
+            message: 'Type of license used',
+            choices: ['None', 'ISC', 'MIT'],
+            filter(val) {
+                return val;
+            }
         }
-    ]
+    ];
+
+    async function runQuery() {
+        return inquirer.prompt(questions)
+        .then((answers) =>{
+            console.log(answers)
+            return answers
+        });
+
+        .catch((error)) {
+            console.log(error)
+        }
+
+    }
+
 }
+
+    runQuery();
