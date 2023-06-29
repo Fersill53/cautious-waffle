@@ -4,7 +4,7 @@
   "description": "README generator from user input to prompts",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "runQuery()"
   },
   "repository": {
     "type": "git",

@@ -25,7 +25,10 @@ const generateHTML = (data) => {
 };
 
 const promptUser = async() => {
-    const questions = [
+    try {
+        const inquirer = await import('inquirer');
+        const answers = await inquirer.prompt ([
+    
         {
             type: 'input',
             name: 'title',
@@ -47,7 +50,7 @@ const promptUser = async() => {
 
         {
             type: 'input',
-            name: 'Usage',
+            name: 'usage',
             message: 'Describe what project will be used for',
         },
 
@@ -68,25 +71,23 @@ const promptUser = async() => {
             name: 'license',
             message: 'Type of license used',
             choices: ['None', 'ISC', 'MIT'],
-            filter(val) {
-                return val;
-            }
+        },
+    ]);
+
+
+        console.log(answers);
+        return answers;}
+
+        catch (error) {
+            console.log(error);
+        
+
+        //function runQuery() {
+        //return inquirer.prompt(questions)
+        //.then((answers) =>{
+            //console.log(answers)
+           // return answers
         }
-    ];
+        };
 
-    async function runQuery() {
-        return inquirer.prompt(questions)
-        .then((answers) =>{
-            console.log(answers)
-            return answers
-        });
-
-        .catch((error)) {
-            console.log(error)
-        }
-
-    }
-
-}
-
-    runQuery();
+        promptUser();
