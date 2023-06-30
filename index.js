@@ -26,7 +26,6 @@ const generateHTML = (data) => {
 
 const promptUser = async() => {
     try {
-        const inquirer = await import('inquirer');
         const answers = await inquirer.prompt ([
     
         {
